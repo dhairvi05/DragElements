@@ -26,9 +26,9 @@ function Properties({selectedElement, updateStyle}) {
             {selectedElement.type!=='image' && (
                 <>
                   <div className='property-group'>
-                    <label>Color</label>
-                    <input type='color' value={selectedElement.style.backgroundColor === 'transparent' ? '#fffff' : selectedElement.style.backgroundColor}
-                           onChange={(e) => editElement('backgroundColor', e.target.value)}
+                    <label>Text Color</label>
+                    <input type='color' value={selectedElement.style.color === '#000000'}
+                           onChange={(e) => editElement('color', e.target.value)}
                     />
                   </div>
                   <div className='property-group'>
