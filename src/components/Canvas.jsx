@@ -15,13 +15,6 @@ function Canvas({elements,
                  setSelectedElement,
                  updateStyle,
                  handleImageUpload}) {
-  // const moveElement = (dragIndex, hoverIndex) => {
-  //   const newElements = [...elements];
-  //   const [movedItem] = newElements.splice(dragIndex, 1);         //these commented out ones are for reordering
-  //   newElements.splice(hoverIndex, 0, movedItem);
-  //   setElements(newElements);
-  // };
-
   const [{isOver, isOverFile}, drop] = useDrop(() => ({
     accept: ['element', 'dropped-element', NativeTypes.FILE], 
     drop: (item, monitor) => {
@@ -99,13 +92,11 @@ function Canvas({elements,
         <>
           <main ref={drop} className='canvas' style={{border}} onClick={handleCanvasClick}>
             <h2>Your Website</h2>
-            {/* <Dropped key={el.id} id={el.id} content={el.content} index={index} moveElement={moveElement}/> */}
             {elements.filter(el=>el).map((el, index) => (
                     <Dropped 
                       key={el.id} 
                       id={el.id} 
                       element={el}
-                      // content={el.content}
                       isSelected={!isDeleteMode && el.id==selectedId}
                       setSelectedId={setSelectedId}
                       setSelectedElement={setSelectedElement}
@@ -115,8 +106,6 @@ function Canvas({elements,
                       setEditElementId={setEditElementId}
                       editElement={editElement}
                       handleImageUpload={handleImageUpload}
-                      // style={el.style}
-                      // updateStyles={updateStyles}
                     />
                 ))}
           </main>

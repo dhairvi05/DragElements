@@ -1,5 +1,5 @@
 # Website Builder with React and Dnd
-This project is a simple, interactive website builder built with React, allowing users to drag and drop elements onto a canvas and rearrange them.
+This project is a simple, interactive website builder built with React, allowing users to drag and drop elements onto a canvas and edit them.
 
 # Architecture
 The application uses a component-based architecture with a clear state flow. The Builder component manages the state of all dropped elements, rendering the Sidebar (drag source) and the Canvas (drop zone). The Canvas then renders the Dropped components based on the current state.

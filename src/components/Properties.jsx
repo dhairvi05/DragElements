@@ -41,7 +41,9 @@ function Properties({selectedElement, updateStyle}) {
                     <label>Font Family</label>
                     <select value={selectedElement.style.fontFamily} onChange={(e) => editElement('fontFamily', e.target.value)}>
                         {fontFamilies.map((font) => (
-                            <option key={font} value={font}>{font}</option>
+                            <option key={font} value={font}>
+                                {font}
+                            </option>
                         ))}
                     </select>
                  </div>
